@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+    <title>Сравнение автомобилей</title>
+    <style>
+        body {
+            margin: 0; /* Убираем отступы */
+            height: 100vh; /* Высота на весь экран */
+            position: relative; /* Для позиционирования псевдоэлемента */
+        }
+        body::before {
+            content: '';
+            background-image: url("f87ee03e11a5901c71afa536267d6187.jpg"); 
+            background-size: cover; /* Заполнение страницы изображением */
+            background-position: center;
+            background-repeat: no-repeat; /* Избегать повторения изображения */
+            height: 100%; 
+            width: 100%;
+            position: absolute; /* Позиционирование псевдоэлемента */
+            top: 0; /* Начало сверху */
+            left: 0; /* Начало слева */
+            filter: blur(6px); /* Уровень размытия */
+            z-index: -1; /* Отправляем на задний план */
+        }
+        .car-images {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .car-images img {
+            width: 200px; /* Ширина изображений */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            margin: 0 40px; /* Отступы между изображениями */
+            border-radius: 10px; /* Скругление углов */
+            box-shadow: 0 4px 8px #00000033; /* Тень для изображений */
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: auto; 
+            background-color: #e9b32aa1;
+            opacity: 0; /* Скрываем таблицу для анимации */
+            animation: fadeIn 1s forwards; /* Анимация появления */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        th, td {
+            border: 1px solid #302600;
+            padding: 10px;
+            text-align: left;
+            transition: background-color 0.3s ease; /* Плавный переход для фона */
+        }
+        th {
+            background-color: #afafaf9d;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif; 
+        }
+        caption {
+            font-size: 2em;
+            margin: 10px 0;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        tr:hover {
+            background-color: #d0d0d0; /* Цвет фона при наведении */
+        }
+        details {
+            transition: all 0.3s ease; /* Плавный переход для деталей */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Сравнение автомобилей: Lamborghini, Voyah, Jaguar</caption>
+    </table>
+
+    <div class="car-images">
+        <img src="64e2ecf5f0f3995504112b2cd1226a2c.jpg" alt="Lamborghini Huracan">
+        <img src="d3245ff805855b22e91044832cebb0e7.jpg" alt="Voyah Free">
+        <img src="1c2065574571f9fd22f0957fb26eea41.jpg" alt="Jaguar F-Type">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Модель</th>
+                <th>Цена</th>
+                <th>Двигатель</th>
+                <th>Расход топлива</th>
+                <th>Скорость</th>
+                <th>Экосертификаты</th>
+                <th>Гарантийный срок</th>
+                <th>Максимальная скорость</th>
+                <th>Тип трансмиссии</th>
+                <th>Количество передач</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <details>
+                        <summary><strong>Lamborghini Huracan</strong></summary>
+                        <i><small>Название "Huracan" происходит от испанского слова "ураган",
+                            что идеально отражает его мощность и динамику!</small></i>
+                    </details>
+                </td>
+                <td>800 000 $</td>
+                <td>5.2L V10</td>
+                <td>14 л/100 км</td>
+                <td>0-100 км/ч за 3.2 с</td>
+                <td>Да</td>
+                <td>3 года</td>
+                <td>325 км/ч</td>
+                <td>Автоматическая</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>
+                    <details>
+                        <summary><strong>Voyah Free</strong></summary>
+                        <i><small>Автомобиль поддерживает голосовое управление,
+                            позволяя вам управлять функциями,
+                            не отвлекаясь от дороги</small></i>
+                    </details>
+                </td>
+                <td>36 000 $</td>
+                <td>2.0L Turbo</td>
+                <td>8 л/100км</td>
+                <td>0-100 км/ч за 5.9 с</td>
+                <td>Да</td>
+                <td>5 лет</td>
+                <td>200 км/ч</td>
+                <td>Автоматическая</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <details>
+                        <summary><strong>Jaguar F-Type</strong></summary>
+                        <i><small>Оснащён мультимедийной системой с поддержкой Apple CarPlay
+                            и Android Auto</small></i>
+                    </details>
+                </td>
+                <td>93 000 $</td>
+                <td>5.0L V8</td>
+                <td>12 л/100км</td>
+                <td>0-100 км/ч за 3.5 с</td>
+                <td>Да</td>
+                <td>5 лет</td>
+                <td>300 км/ч</td>
+                <td>Автоматическая</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10">
+                    <mark>Самая дорогая модель:</mark> Lamborghini Aventador<br>
+                    <mark>Самая дешёвая модель:</mark> Voyah Free
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
